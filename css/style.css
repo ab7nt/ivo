@@ -1,11 +1,8 @@
 body {
   background-color: black;
-  /* background-image: url('../img/bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
-.container {
+.content {
   display: flex;
   flex-direction: row;
 }
@@ -30,15 +27,38 @@ body {
   padding-top: 40px;
   padding-left: 45px;
   border-top: solid darkgray 2px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-end; */
 }
 
-/* .menu-list-item {
-  border-left: solid darkgray 15px;
-} */
+.menu-list-button {
+  margin-bottom: 5px;
+}
+
+.main-content {
+  padding-top: 15px;
+}
 
 .blog-list {
   color: white;
+}
+
+.blog-list-item {
+  margin-bottom: 15px;
+  color: black;
+  background-color: white;
+}
+
+.blog-post {
+  padding: 15px;
+  min-height: 150px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: row;
+}
+
+.post-date {
+  margin-right: 15px;
+}
+
+.section-sidebar {
+  margin-right: 30px;
 }
