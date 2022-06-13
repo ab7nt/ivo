@@ -9,6 +9,7 @@ body {
 
 .logo {
   width: 235px;
+  border-bottom: 2px solid darkgray;
 }
 
 .social-list {
@@ -61,4 +62,38 @@ body {
 
 .section-sidebar {
   margin-right: 30px;
+}
+
+@media (max-width: 685px) {
+  .sidebar {
+    max-width: 352px;
+  }
+
+  .logo {
+    border-bottom: none;
+    /* border-right: 2px solid darkgray; */
+    transform: rotate(90deg) translate(60px, -60px);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-sidebar {
+    margin: 0;
+  }
+
+  .social-list {
+    margin-bottom: 15px;
+  }
+
+  .menu-list {
+    padding-left: 0;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
