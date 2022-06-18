@@ -7,7 +7,7 @@
     <li class="blog-list-item border rounded">
       <div class="blog-post">
         <div class="date-wrapper">
-          <div class="post-date">
+          <div class="post-date text-muted">
             ${el.date}
           </div>
         </div>
