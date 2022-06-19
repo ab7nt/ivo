@@ -45,20 +45,12 @@ body {
   background-repeat: no-repeat;
 }
 
-.social-list-item-vk {
-  background-image: url(../img/socials/vk_white.png);
+.social-list-item path{
+  transition: fill 0.3s ease;
 }
 
-.social-list-item-vk:hover {
-  background-image: url(../img/socials/vk_hover.png);
-}
-
-.social-list-item-inst {
-  background-image: url(../img/socials/instagram_white.png);
-}
-
-.social-list-item-inst:hover {
-  background-image: url(../img/socials/instagram_hover.png);
+.social-list-item:hover path{
+  fill: rgb(220, 190, 190);
 }
 
 .menu-list {
