@@ -1,5 +1,14 @@
+
+@font-face {
+  font-family: 'Bebas Neue Book';
+  src: url('../fonts/bebasneue-book.woff2') format('woff2'),
+       url('../fonts/bebasneue-book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  background-color: black;
+  background-color: #618ecd;
 }
 
 .content {
@@ -13,12 +22,22 @@ body {
   align-items: center;
 }
 
-.logo {
-  width: 235px;
+.author-name {
+  margin-bottom: 6px;
+  color: white;
+  font-size: 170px;
+  font-family: 'Bebas Neue Book';
+  line-height: 90%;
+
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .social-list {
-  padding: 0 35px;
+  /* padding: 0 35px; */
   display: flex;
 }
 
@@ -47,7 +66,8 @@ body {
 }
 
 .social-list-item:hover path{
-  fill: rgb(220, 190, 190);
+  /* fill: rgb(220, 190, 190); */
+  fill: lightsteelblue;
 }
 
 .menu-list {
@@ -72,6 +92,8 @@ body {
 }
 
 .blog-list-item {
+  border: 2px solid #e2d4f9c2;
+  border-radius: 20px;
   margin-bottom: 15px;
   color: black;
   background-color: white;
@@ -113,7 +135,7 @@ body {
 }
 
 .accordion {
-  width: 469px;
+  min-width: 429px;
 }
 
 @media (max-width: 685px) {
@@ -153,7 +175,7 @@ body {
   }
 
   .accordion {
-    width: 365px;
+    min-width: 365px;
   }
 }
 

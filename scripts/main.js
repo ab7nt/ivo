@@ -24,7 +24,7 @@
 
   postsFromLocalStorage.forEach((el) => {
     blogList.innerHTML += `
-    <li class="blog-list-item border rounded">
+    <li class="blog-list-item">
       <div class="blog-post">
         <div class="date-wrapper">
           <div class="post-date text-muted">
