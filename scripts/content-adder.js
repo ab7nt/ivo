@@ -59,9 +59,9 @@
             </p>
           </div>
           <div class="button-wrapper">
-            <button id="postEditBtn" type="button" class="btn btn-outline-secondary">Редактировать</button>
-            <button id="saveChangesBtn" type="button" class="btn btn-outline-success" disabled="true">Сохранить</button>
-            <button id="postDeleteBtn" type="button" class="btn btn-outline-danger">Удалить</button>
+            <button id="postEditBtn" type="button" class="btn btn-sm btn-outline-secondary">Редактировать</button>
+            <button id="saveChangesBtn" type="button" class="btn btn-sm btn-outline-success" disabled="true">Сохранить</button>
+            <button id="postDeleteBtn" type="button" class="btn btn-sm btn-outline-danger">Удалить</button>
           </div>
         </div>
       </li>
