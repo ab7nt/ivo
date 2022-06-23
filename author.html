@@ -14,8 +14,8 @@
 </head>
 
 <body>
-  <div class="container cantainer-author pt-4 pb-4">
-    <form id="postForm">
+  <div class="container container-author pt-4">
+    <form id="postForm" class="post-form" >
       <div class="mb-3">
         <label for="formTitle" class="form-label">Заголовок</label>
         <input type="text" class="form-control" id="formTitle">
@@ -24,9 +24,13 @@
         <label for="formText" class="form-label">Текст заметки</label>
         <textarea class="form-control" id="formText" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary" id="postBtnSubmit">Отправить</button>
+      <button type="submit" class="btn btn-outline-light" id="postBtnSubmit">Отправить</button>
     </form>
+
+    <ul id="blogList" class="blog-list list-unstyled"></ul>
   </div>
+
+  
 </body>
 
 </html>
