@@ -134,46 +134,35 @@ albums.forEach(el => {
 
   albumsList.innerHTML += `
   <li>  
-    <button class="btn btn-albums btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
+    <a id="${el.author + collapseId}" class="btn btn-albums btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
       <strong>${el.author}</strong> - ${el.album} - ${el.year}
-      </button>
+      </a>
     <div class="collapse" id="${collapseId}">
-      <div class="card card-body">
-      
+      <div id="cardBody" class="card card-body">
       </div>
     </div>
   </li>`
-
-  // albumsAccordion.innerHTML += `
-  //   <div class="accordion-item">
-  //     <h2 class="accordion-header" id="headingOne">
-  //       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-  //         aria-expanded="true" aria-controls="collapseOne">
-  //         <span><strong>${el.author}</strong> - ${el.album} - ${el.year}</span>
-  //       </button>
-  //     </h2>
-  //     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-  //       data-bs-parent="#albumsAccordion">
-  //       <div class="accordion-body">
-  //         ${el.frame}
-  //       </div>
-  //     </div>
-  //   </div>`
 })
 
 albumsList.addEventListener('click', (e) => {
-  // console.log(e.target.tagName);
-  // console.log(albumsList.tagName);
-  if(e.target.tagName == 'BUTTON') {
-    // console.log(e.target.tagName); 
-    albums.forEach(el => {
-      // console.log(el.album);
-      // console.log(e.target.parentElement.children[0].outerText);
-      if(e.target.parentElement.children[0].outerText.includes(el.album)) {
-        e.target.parentElement.children[1].children[0].innerHTML = `${el.frame}`
-      }
-    })
-   
+  const cardBody = e.target.parentElement.children[1].children[0];
+  
+  if(e.target.tagName == 'A') {
+    e.target.classList.toggle('btn-albums-bg');
+
+    if(cardBody.querySelectorAll('iframe').length > 0) {
+      return
+    } else {
+      albums.forEach(el => {
+        if(e.target.outerText.includes(el.album)) {
+          cardBody.innerHTML = `${el.frame}`
+        }
+      })
+
+      setTimeout(function() {
+        document.querySelector(`#${e.target.parentElement.children[0].id}`).scrollIntoView({behavior: 'smooth'})
+      }, 2)
+    }
   }
 })
 })();
