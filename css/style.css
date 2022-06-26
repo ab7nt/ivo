@@ -252,7 +252,7 @@ body {
 }
 
 /* music.html */
-.album-list {
+/* .album-list {
   padding: 20px;
   border: 1px solid white;
   border-radius: 15px;
@@ -261,7 +261,7 @@ body {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-}
+} */
 
 .card-body {
   margin-bottom: 7px;
@@ -270,19 +270,22 @@ body {
   justify-content: center;
 }
 
+
 .btn-outline-secondary:hover {
-  background-color: #91b0a2;
+  background-color: #cea8e0;
 }
 
 .btn-albums {
   display: block;
   margin-bottom: 7px;
   text-align: left;
-  color: black;
+  color: whitesmoke;
+  background-color:#618ecd;
+  border-color: whitesmoke;
 }
 
 .btn-albums-bg {
-  background-color: #a19bac;
+  background-color: #9e75b1;
 }
 
 .btn-albums:last-child {
