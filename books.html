@@ -78,7 +78,7 @@
             Сообщите своё имя и адрес электронной почты, чтобы мы могли связаться с вами и обсудить отправку книги.
           </div>
 
-          <form id="bookForm" class="book-form needs-validation" novalidate>
+          <form id="bookForm" class="book-form needs-validation">
             <div class="mb-3">
               <label for="inputName" class="form-label">Имя</label>
               <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" required>
@@ -89,6 +89,10 @@
             </div>
             <button id="bookFormBtn" type="submit" class="btn btn-outline-light" disabled>Отправить</button>
           </form>
+
+          <div id="infoAfterSubmit">
+            
+          </div>
         </div>
 
         <div class="books">
