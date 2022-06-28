@@ -1,47 +1,48 @@
 (() => {
   const blogList = document.querySelector('#blogList');
-  // const defaultPosts = [
-  //   {
-  //     id: 1,
-  //     date: '12.12.2022',
-  //     title: `Презентация книги "ИВО - Начало".`,
-  //     text: 'Раздача автографов нахаляву.'
-  //   },
-  //   {
-  //     id: 2,
-  //     date: '11.11.2022',
-  //     title: 'Квартирник у Гали.',
-  //     text: 'Уютная компания, приятные люди, ламповая атмосфера. Исполнялись как новые, так и старые песни.'
-  //   },
-  //   {
-  //     id: 3,
-  //     date: '10.10.2022',
-  //     title: 'Релиз нового альбома.',
-  //     text: 'Рождённый в муках. Слушать на всех платформах.'
-  //   }
-  // ]
   const postsFromLocalStorage = JSON.parse(localStorage.getItem('posts')) || [];
+  const morePostsBtn = document.querySelector('#morePostsBtn');
+  let qtyOfPosts;
 
-  postsFromLocalStorage.forEach((el) => {
-    blogList.innerHTML += `
-    <li class="blog-list-item">
-      <div class="blog-post">
-        <div class="date-wrapper">
-          <div class="post-date text-muted">
-            ${el.date}
+  postsFromLocalStorage.length < 5
+    ? qtyOfPosts = postsFromLocalStorage.length
+    : qtyOfPosts = 5
+
+  function renderPosts(start = 0) {
+    for(let i = start; i < qtyOfPosts + start; i++) {
+      blogList.innerHTML += `
+      <li class="blog-list-item">
+        <div class="blog-post">
+          <div class="date-wrapper">
+            <div class="post-date text-muted">
+              ${postsFromLocalStorage[i].date}
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="post-title mb-2">
+              ${postsFromLocalStorage[i].title}
+            </h5>
+            <div class="partition"></div>
+            <p class="blog-descr pt-1">
+              ${postsFromLocalStorage[i].text}
+            </p>
           </div>
         </div>
-        <div class="blog-content">
-          <h5 class="post-title mb-2">
-            ${el.title}
-          </h5>
-          <div class="partition border-bottom"></div>
-          <p class="blog-descr pt-1">
-            ${el.text}
-          </p>
-        </div>
-      </div>
-    </li>
-    `
+      </li>`
+    }
+
+    if(document.querySelectorAll('.blog-list-item').length == postsFromLocalStorage.length) {
+      morePostsBtn.classList.add('invisible')
+    }
+  }
+  renderPosts();
+
+  morePostsBtn.addEventListener('click', (e) => {
+    const startNumberOfPosts = document.querySelectorAll('.blog-list-item').length;
+
+    setTimeout(function() {
+      window.scrollBy({top: 500, behavior: 'smooth'})
+    })
+    renderPosts(startNumberOfPosts);
   })
 })();
