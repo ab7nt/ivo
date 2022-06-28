@@ -71,7 +71,7 @@ body {
   background-size: 40px;
   background-position: center center;
   background-repeat: no-repeat;
-  transition: scale 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .social-list-item:hover {
@@ -103,6 +103,16 @@ body {
   margin-right: 0;
 }
 
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .blog-list {
+  margin: 0;
+} */
+
 .blog-list-item {
   max-width: 800px;
   border: 2px solid #9e75b1;
@@ -110,6 +120,10 @@ body {
   margin-bottom: 15px;
   color: black;
   background-color: white;
+}
+
+.blog-list-item:last-child {
+  margin-bottom: 0;
 }
 
 .blog-post {
@@ -130,6 +144,11 @@ body {
   width: 300px;
   align-items: center;
   border-bottom: 1px solid #cea8e0;
+}
+
+.more-btn {
+  margin-bottom: 15px;
+  /* background-color: white; */
 }
 
 .section-sidebar {
@@ -198,6 +217,11 @@ body {
 }
 
 /* books.html */
+.books {
+  max-width: 800px;
+  min-width: 330px;
+}
+
 .book-form-wrapper {
   margin-bottom: 15px;
   display: flex;
@@ -223,8 +247,29 @@ body {
 }
 
 #infoAfterSubmit {
+  text-align: center;
+  font-size: 15px;
   margin-bottom: 10px;
   color: whitesmoke;
+}
+
+.books {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-title {
+  color: white;
+  margin-bottom: 11px;
+}
+
+.cover-book {
+  margin-bottom: 15px;
+  width: 220px;
+  border: 1px solid black;
+  box-shadow: 0 0 20px 5px;
+  z-index: 1;
 }
 
 .with-margin {
@@ -234,10 +279,6 @@ body {
 
 .without-margin {
   margin: 0;
-}
-
-.book-title {
-  color: white;
 }
 
 .book-chapter, .book-title {
@@ -251,6 +292,7 @@ body {
   background-color: white;
   border: 1px solid transparent;
   border-radius: 10px;
+  transform: translateY(-30px);
 }
 
 .book-chapter {
